@@ -51,10 +51,48 @@ print(liczby_lin)
 
 z = np.indices((5, 3))
 print(z)
-print('tutaj')
 print(z[0, 1, 2])
 print(z.ndim)
 
 x, y = np.mgrid[0:5, 0:5]
 print(x)
 print(y)
+
+mat_diag_k = np.diag([a for a in range(5)], k=1)
+print(mat_diag_k)
+
+z = np.fromiter(range(5), dtype='int32')
+print(z)
+
+# znaki = b'abcdef'
+# zn1 = np.frombuffer(znaki, dtype='S1')
+# print(zn1)
+# zn2 = np.frombuffer(znaki, dtype='S2')
+# print(zn2)
+# zn3 = np.frombuffer(znaki, dtype='S6')
+# print(zn3)
+
+znaki = 'abcdef'
+zn4 = np.array(list(znaki))
+zn5 = np.array(list(znaki), dtype='S1')
+zn6 = np.array(list(b'abcdef'))
+zn7 = np.fromiter(znaki, dtype='S1')
+zn8 = np.fromiter(znaki, dtype='U1')
+
+print(zn4)
+print(zn5)
+print(zn6)
+print(zn7)
+print(zn8)
+
+mat = np.ones((2, 2))
+mat_1 = np.ones((2, 2))
+mat = mat + mat_1
+print(mat)
+print(mat - mat_1)
+print(mat * mat_1)
+print(mat/mat_1)
+a = np.dot(mat, mat_1)
+print(a)
+b = mat.dot(mat_1)
+print(b)
